@@ -13,7 +13,8 @@ public class Quartermaster extends GuildMember {
 
     @Override
     public void receive(String topic, GuildMember from, String payload) {
-        System.out.println("[Quartermaster " + getName() + "] Received " + topic +
-                " from " + from.getName() + ": " + payload);
+        String sender = (from == null) ? "System" : from.getName();
+        System.out.println("[Quartermaster " + getName() + "] Received " + topic
+                + " from " + sender + ": " + payload);
     }
 }

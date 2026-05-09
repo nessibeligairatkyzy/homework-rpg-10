@@ -13,7 +13,8 @@ public class Loremaster extends GuildMember {
 
     @Override
     public void receive(String topic, GuildMember from, String payload) {
-        System.out.println("[Loremaster " + getName() + "] Studying lore on " + topic +
-                " from " + from.getName() + ": " + payload);
+        String sender = (from == null) ? "System" : from.getName();
+        System.out.println("[Loremaster " + getName() + "] Received " + topic
+                + " from " + sender + ": " + payload);
     }
 }
